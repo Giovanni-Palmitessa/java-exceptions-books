@@ -12,5 +12,15 @@ public class Main {
 
         //indice per i libri
         int indice = 0;
+
+        //istanzio ciclo while per iterare su array dei libri
+        while (true) {
+            try {
+                // chiedere i dati del libro
+                System.out.println("Inserisci i dati del libro!");
+
+
+            }
+        }
     }
 }

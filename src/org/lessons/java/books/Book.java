@@ -9,6 +9,16 @@ public class Book {
 
     // COSTRUTTORE
     public Book(String title, int pages, String author, String publisher) {
+        //controlli per titolo vuoto
+        if (title == null || title.isEmpty()) {
+            throw new IllegalArgumentException("Il titolo non può essere vuoto!");
+        }
+
+        //controlli per numero di pagine <=0
+        if (pages <= 0) {
+            throw new IllegalArgumentException("Il numero di pagine deve essere maggiore di 0!")
+        }
+
         this.title = title;
         this.pages = pages;
         this.author = author;

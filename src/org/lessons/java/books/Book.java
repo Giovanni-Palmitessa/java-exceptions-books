@@ -16,7 +16,17 @@ public class Book {
 
         //controlli per numero di pagine <=0
         if (pages <= 0) {
-            throw new IllegalArgumentException("Il numero di pagine deve essere maggiore di 0!")
+            throw new IllegalArgumentException("Il numero di pagine deve essere maggiore di 0!");
+        }
+
+        //controlli autore
+        if (author == null || author.isEmpty()) {
+            throw new IllegalArgumentException("Il nome dell'autore non può essere vuoto!");
+        }
+
+        //controlli editore
+        if (publisher == null || publisher.isEmpty()) {
+            throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
         }
 
         this.title = title;
@@ -31,6 +41,9 @@ public class Book {
         return title;
     }
     public void setTitle(String title) {
+        if (title.isEmpty()) {
+            throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
+        }
         this.title = title;
     }
     public int getPages() {

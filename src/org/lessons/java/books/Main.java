@@ -33,6 +33,13 @@ public class Main {
                 if (pages <= 0) {
                     throw new IllegalArgumentException("Non puoi inserire un numero di pagine inferiore a 0!")
                 }
+
+                // Autore
+                System.out.println("Inserisci il nome dell'autore: ");
+                String author = scan.nextLine();
+                if (author.isEmpty()) {
+                    throw new IllegalArgumentException("Il nome dell'autore non può essere vuoto");
+                }
             }
         }
     }

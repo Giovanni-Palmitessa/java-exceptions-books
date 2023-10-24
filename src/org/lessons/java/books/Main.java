@@ -20,6 +20,19 @@ public class Main {
                 System.out.println("Inserisci i dati del libro!");
 
 
+                // Titolo del Libro
+                System.out.println("Inserisci il titolo del libro: ");
+                String title = scan.nextLine();
+                if (title.isEmpty()) {
+                    throw new IllegalArgumentException("Il titolo non può essere vuoto!");
+                }
+
+                // Numero di pagine
+                System.out.println("Inserisci il numero di pagine: ");
+                int pages = Integer.parseInt(scan.nextLine());
+                if (pages <= 0) {
+                    throw new IllegalArgumentException("Non puoi inserire un numero di pagine inferiore a 0!")
+                }
             }
         }
     }

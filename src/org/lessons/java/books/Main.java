@@ -47,6 +47,15 @@ public class Main {
                 if (publisher.isEmpty()) {
                     throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
                 }
+
+                // istanzio il nuovo oggetto Book
+                Book book = new Book(title, pages, author, publisher);
+                // aggiungo l'oggetto appena creato all'array
+                libri[indice] = book;
+                // aumento il contatore per far ripartire il ciclo
+                indice++;
+
+                // se tutto è andato bene confermo l'inseirmento del libro nmell'array
             }
         }
     }

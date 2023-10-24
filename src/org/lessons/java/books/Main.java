@@ -19,7 +19,6 @@ public class Main {
                 // chiedere i dati del libro
                 System.out.println("Inserisci i dati del libro!");
 
-
                 // Titolo del Libro
                 System.out.println("Inserisci il titolo del libro: ");
                 String title = scan.nextLine();
@@ -28,11 +27,19 @@ public class Main {
                 }
 
                 // Numero di pagine
-                System.out.println("Inserisci il numero di pagine: ");
-                int pages = Integer.parseInt(scan.nextLine());
-                if (pages <= 0) {
-                    throw new IllegalArgumentException("Non puoi inserire un numero di pagine inferiore a 0!")
-                }
+                int pages;
+                do {
+                    System.out.println("Inserisci il numero di pagine: ");
+                    try {
+                        pages = Integer.parseInt(scan.nextLine());
+                        if (pages <= 0) {
+                            throw new IllegalArgumentException("Non puoi inserire un numero di pagine inferiore a 0!");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Inserisci un numero valido per il numero di pagine!");
+                        pages = -1; // Imposta un valore non valido per continuare il ciclo
+                    }
+                } while (pages <= 0);
 
                 // Autore
                 System.out.println("Inserisci il nome dell'autore: ");
@@ -55,8 +62,12 @@ public class Main {
                 // aumento il contatore per far ripartire il ciclo
                 indice++;
 
-                // se tutto è andato bene confermo l'inseirmento del libro nmell'array
+                // se tutto è andato bene confermo l'inserimento del libro nell'array
+                System.out.println("Libro inserito correttamente");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Errore: " + e.getMessage());
             }
         }
+
     }
 }

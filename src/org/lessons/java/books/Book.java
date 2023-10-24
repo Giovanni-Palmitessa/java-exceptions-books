@@ -7,5 +7,11 @@ public class Book {
     private String author;
     private String publisher;
 
-
+    // COSTRUTTORE
+    public Book(String title, int pages, String author, String publisher) {
+        this.title = title;
+        this.pages = pages;
+        this.author = author;
+        this.publisher = publisher;
+    }
 }

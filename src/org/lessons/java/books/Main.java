@@ -7,8 +7,12 @@ public class Main {
         // Istanzio lo scanner
         Scanner scan = new Scanner(System.in);
 
+        // Chiedere all'utente quanti libri si vogliono inserire
+        System.out.print("Quanti libri vuoi inserire? ");
+        int numeroLibri = Integer.parseInt(scan.nextLine());
+
         //creo un array di oggetti di libri
-        Book[] libri = new Book[100];
+        Book[] libri = new Book[numeroLibri];
 
         //indice per i libri
         int indice = 0;
@@ -16,7 +20,7 @@ public class Main {
         // ciclo while per chiedere all'utente di inserire un libro
         while (indice < libri.length) {
             try {
-                System.out.println("Inserisci i dati del libro:");
+                System.out.println("Inserisci i dati del " + (indice + 1) + "° libro." );
 
                 // Chiedo il Titolo
                 System.out.print("Titolo: ");

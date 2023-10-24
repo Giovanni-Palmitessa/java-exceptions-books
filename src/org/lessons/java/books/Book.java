@@ -41,7 +41,7 @@ public class Book {
         return title;
     }
     public void setTitle(String title) {
-        if (title.isEmpty()) {
+        if (title == null || title.isEmpty()) {
             throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
         }
         this.title = title;
@@ -59,7 +59,7 @@ public class Book {
         return author;
     }
     public void setAuthor(String author) {
-        if (author.isEmpty()) {
+        if (author == null || author.isEmpty()) {
             throw new IllegalArgumentException("Il nome dell'autore non può essere vuoto!");
         }
         this.author = author;
@@ -68,7 +68,7 @@ public class Book {
         return publisher;
     }
     public void setPublisher(String publisher) {
-        if (publisher.isEmpty()) {
+        if (publisher == null || publisher.isEmpty()) {
             throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
         }
         this.publisher = publisher;

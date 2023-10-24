@@ -39,6 +39,8 @@ public class Main {
                 indice++;
 
                 System.out.println("Libro inserito correttamente.");
+            } catch (NumberFormatException e) {
+                System.out.println("Inserisci un numero valido per il numero di pagine!");
             } catch (IllegalArgumentException e) {
                 System.out.println("Errore: " + e.getMessage());
             }

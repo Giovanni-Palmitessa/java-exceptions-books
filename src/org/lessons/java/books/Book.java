@@ -50,18 +50,27 @@ public class Book {
         return pages;
     }
     public void setPages(int pages) {
+        if (pages <= 0 ) {
+            throw new IllegalArgumentException("Il numero di pagine deve essere maggiore di 0!");
+        }
         this.pages = pages;
     }
     public String getAuthor() {
         return author;
     }
     public void setAuthor(String author) {
+        if (author.isEmpty()) {
+            throw new IllegalArgumentException("Il nome dell'autore non può essere vuoto!");
+        }
         this.author = author;
     }
     public String getPublisher() {
         return publisher;
     }
     public void setPublisher(String publisher) {
+        if (publisher.isEmpty()) {
+            throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
+        }
         this.publisher = publisher;
     }
 }

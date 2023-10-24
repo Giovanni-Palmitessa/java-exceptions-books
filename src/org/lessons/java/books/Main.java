@@ -40,6 +40,13 @@ public class Main {
                 if (author.isEmpty()) {
                     throw new IllegalArgumentException("Il nome dell'autore non può essere vuoto");
                 }
+
+                // Editore
+                System.out.println("Inserisci il nome dell'editore: ");
+                String publisher = scan.nextLine();
+                if (publisher.isEmpty()) {
+                    throw new IllegalArgumentException("Il nome dell'editore non può essere vuoto!");
+                }
             }
         }
     }

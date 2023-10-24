@@ -9,5 +9,8 @@ public class Main {
 
         //creo un array di oggetti di libri
         Book[] libri = new Book[100];
+
+        //indice per i libri
+        int indice = 0;
     }
 }

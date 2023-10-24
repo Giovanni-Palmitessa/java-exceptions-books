@@ -53,12 +53,12 @@ public class Main {
         // Stampa il catalogo dei libri
         System.out.println("Catalogo dei libri:");
         for (int i = 0; i < indice; i++) {
+            System.out.println("Libro " + (i + 1));
             System.out.println("Titolo: " + libri[i].getTitle());
             System.out.println("Numero di pagine: " + libri[i].getPages());
             System.out.println("Autore: " + libri[i].getAuthor());
             System.out.println("Editore: " + libri[i].getPublisher());
             System.out.println();
         }
-
     }
 }

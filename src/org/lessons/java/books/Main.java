@@ -1,5 +1,9 @@
 package org.lessons.java.books;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -59,6 +63,27 @@ public class Main {
             System.out.println("Autore: " + libri[i].getAuthor());
             System.out.println("Editore: " + libri[i].getPublisher());
             System.out.println();
+        }
+
+        // lo scrivo su file
+        try (FileWriter fileWriter = new FileWriter("./resources/books.txt");) {
+            //scrivo una riga per ogni book
+            for (Book book : libri) {
+                fileWriter.write(book.toString() + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Impossibile scrivere file!");;
+        }
+
+        //leggo il file
+        System.out.println("Leggo il file!");
+        try(Scanner fileReader = new Scanner(new File("./resources/books.txt"))) {
+            while (fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Impossibile leggere file!");
         }
     }
 }
